@@ -1,0 +1,18 @@
+name: Reusable no-op workflow
+
+on:
+  workflow_call:
+
+permissions: {}
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - run: echo "hello"
